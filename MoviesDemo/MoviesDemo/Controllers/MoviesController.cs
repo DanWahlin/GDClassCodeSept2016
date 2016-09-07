@@ -18,5 +18,20 @@ namespace MoviesDemo.Controllers
             movie.Director = "George Lucas";
             return View(movie);
         }
+
+        //Serve the form to the browser
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        //Receive data back from browser
+        //when they submit the form
+        [HttpPost]
+        public ActionResult Create(Movie movie)
+        {
+            return View(movie);
+        }
     }
 }

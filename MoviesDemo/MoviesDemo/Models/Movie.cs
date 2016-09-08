@@ -11,5 +11,6 @@ namespace MoviesDemo.Models
         public string Title { get; set; }
         public string Director { get; set; }
         public List<Actor> Actors { get; set; }
+        public Category Category { get; set; }
     }
 }

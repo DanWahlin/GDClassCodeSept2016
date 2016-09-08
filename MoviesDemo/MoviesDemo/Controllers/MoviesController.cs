@@ -1,4 +1,5 @@
 ﻿using MoviesDemo.Models;
+using MoviesDemo.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,35 @@ namespace MoviesDemo.Controllers
                 new Actor { Id=3, Name="Carrie Fisher",Rating=10 }
             };
             return View(movie);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            //Movies table
+            var movie = new Movie();
+            movie.Title = "Star Wars";
+            movie.Director = "George Lucas";
+
+            //Categories table
+            var categories = new List<Category>
+            {
+                new Category { Id=1, Name="Action" },
+                new Category { Id=2, Name="Horror" }
+            };
+
+            var vm = new MovieEditViewModel
+            {
+                Movie = movie,
+                Categories = categories
+            };
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(Movie movie)
+        {
+            return View();
         }
 
         //Serve the form to the browser

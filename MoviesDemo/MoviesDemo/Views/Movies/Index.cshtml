@@ -2,7 +2,7 @@
 
 <h2>Movies</h2>
 
-@Model.Title
+<a href="/Movies/Edit/@Model.Id">@Model.Title</a>
 <br />
 @Model.Director
 
@@ -17,8 +17,8 @@
     {
         <tr>
             <td>@actor.Id</td>
-            <td>@actor.Name</td> 
-            <td>@actor.Rating</td>           
+            <td>@actor.Name</td>
+            <td>@actor.Rating</td>
         </tr>
     }
 </table>

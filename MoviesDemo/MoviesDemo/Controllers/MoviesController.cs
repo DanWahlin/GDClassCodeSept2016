@@ -15,6 +15,7 @@ namespace MoviesDemo.Controllers
         public ActionResult Index()
         {
             var movie = new Movie();
+            movie.Id = 1;
             movie.Title = "Star Wars";
             movie.Director = "George Lucas";
             movie.Actors = new List<Actor>
@@ -30,6 +31,7 @@ namespace MoviesDemo.Controllers
         {
             //Movies table
             var movie = new Movie();
+            movie.Id = 1;
             movie.Title = "Star Wars";
             movie.Director = "George Lucas";
 

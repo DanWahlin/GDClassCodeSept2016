@@ -8,6 +8,7 @@ namespace MoviesDemo.Models
     public class Movie
     {
         //prop (tab + tab)
+        public int Id { get; set; }
         public string Title { get; set; }
         public string Director { get; set; }
         public List<Actor> Actors { get; set; }

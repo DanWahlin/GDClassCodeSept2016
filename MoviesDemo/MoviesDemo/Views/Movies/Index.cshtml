@@ -1,5 +1,15 @@
 ﻿@model MoviesDemo.Models.Movie
 
+@section styles 
+{
+ <link rel="stylesheet" href="somestyles.css" />
+}
+
+@section scripts 
+{
+    <script src="myscript.js"></script>
+}
+
 <h2>Movies</h2>
 
 <a href="/Movies/Edit/@Model.Id">@Model.Title</a>
@@ -22,6 +32,17 @@
         </tr>
     }
 </table>
+
+@{
+    var items = new List<string> { "Thread", "Needle" };
+}
+@MyHelpers.RenderList(items)
+
+<br />
+@MyHelpers.TwoDigitDate(DateTime.Now)
+
+<br />
+@MyHelpers.FormatCurrency(9.99M)
 
 
 

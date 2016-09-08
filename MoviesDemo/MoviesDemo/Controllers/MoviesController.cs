@@ -69,7 +69,13 @@ namespace MoviesDemo.Controllers
         [HttpPost]
         public ActionResult Create(Movie movie)
         {
-            return View(movie);
+            //ALWAYS PUT THIS!!!!
+            if (!ModelState.IsValid)
+            {
+                return View(movie);
+            }
+            //Insert into database
+            return RedirectToAction("Index");
         }
     }
 }

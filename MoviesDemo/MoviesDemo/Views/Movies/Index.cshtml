@@ -7,13 +7,21 @@
 @Model.Director
 
 <h3>Actors</h3>
-<ul>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Rating</th>
+    </tr>
     @foreach (var actor in Model.Actors)
-            {
-        <li>@actor</li>
+    {
+        <tr>
+            <td>@actor.Id</td>
+            <td>@actor.Name</td> 
+            <td>@actor.Rating</td>           
+        </tr>
     }
-
-</ul>
+</table>
 
 
 

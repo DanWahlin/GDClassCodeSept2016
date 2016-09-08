@@ -10,6 +10,6 @@ namespace MoviesDemo.Models
         //prop (tab + tab)
         public string Title { get; set; }
         public string Director { get; set; }
-        public List<string> Actors { get; set; }
+        public List<Actor> Actors { get; set; }
     }
 }

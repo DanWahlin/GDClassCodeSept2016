@@ -16,11 +16,11 @@ namespace MoviesDemo.Controllers
             var movie = new Movie();
             movie.Title = "Star Wars";
             movie.Director = "George Lucas";
-            movie.Actors = new List<string>
+            movie.Actors = new List<Actor>
             {
-                "Mark Hamill",
-                "Harrison Ford",
-                "Carrie Fisher"
+                new Actor { Id=1, Name="Mark Hamill",Rating=9 },
+                new Actor { Id=2, Name="Harrison Ford",Rating=10 },
+                new Actor { Id=3, Name="Carrie Fisher",Rating=10 }
             };
             return View(movie);
         }

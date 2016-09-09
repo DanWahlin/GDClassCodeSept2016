@@ -8,6 +8,8 @@ using System.Data.Entity;
 
 namespace MvcEntityFramework.Controllers
 {
+    //Example of adding Entity Framework directly
+    //into Controller - I recommend making a data access layer!!
     public class HomeController : Controller
     {
         NorthwindEntities _dbContext = new NorthwindEntities();
@@ -16,7 +18,7 @@ namespace MvcEntityFramework.Controllers
         public ActionResult Index()
         {
             var customers = (from c in _dbContext.Customers
-                             select c).ToList();
+                             select c).Take(10).ToList();
             return View(customers);
         }
 
@@ -31,7 +33,7 @@ namespace MvcEntityFramework.Controllers
             if (ModelState.IsValid)
             {
                 //Northwind requires a key to be set (bad idea!!)
-                customer.CustomerID = "mykey";
+                //customer.CustomerID = "mykey";
                 _dbContext.Customers.Add(customer);
                 _dbContext.SaveChanges();
                 return RedirectToAction("Index");

@@ -79,5 +79,7 @@ namespace MvcEntityFramework.Repository
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ap_InsertCustomer", customerIDParameter, companyNameParameter, contactNameParameter, contactTitleParameter, addressParameter, cityParameter, regionParameter, postalCodeParameter, countryParameter, phoneParameter, faxParameter);
         }
+
+        public System.Data.Entity.DbSet<MvcEntityFramework.Models.Movie> Movies { get; set; }
     }
 }
